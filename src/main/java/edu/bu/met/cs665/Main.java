@@ -1,38 +1,40 @@
-/**
- * Name: FIRST_NAME LAST_NAME
- * Course: CS-665 Software Designs & Patterns
- * Date: MM/DD/YYYY
- * File Name: Main.java
- * Description: Write a description for this class
- */
-
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.project.builders.*;
+import edu.bu.met.cs665.project.components.*;
+import edu.bu.met.cs665.project.factories.*;
+import edu.bu.met.cs665.project.pricingStrategy.DiscontedPricingStrategy;
+import edu.bu.met.cs665.project.pricingStrategy.StandardPricingStrategy;
+import edu.bu.met.cs665.project.car.*;
+
 
 /**
- * This is the Main class.
+ * Main
  */
 public class Main {
 
-  /**
-   * A main method to run examples.
-   * You may use this method for development purposes as you start building your
-   * assignments/final project.  This could prove convenient to test as you are developing.
-   * However, please note that every assignment/final projects requires JUnit tests.
-   */
-  public static void main(String[] args) {
-    System.out.println("This is a test message from the Main class (Main.java file)");
-  }
+    public static void main(String[] args) {
+        // Make you own Honda sedan
+        CarFactory myhondCarFactory = new HondaFactory();
+        SedanBuilder hondaSedanBuilder = myhondCarFactory.createSedanBuilder();
 
-  /**
-   * This method performs XYZ and returns String.
-   *
-   * @return String
-   */
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getFirstName();
-  }
+        hondaSedanBuilder.buildCarType("Sedan");
+        hondaSedanBuilder.buildModel("2024 Civic");
+        hondaSedanBuilder.buildColor("Black");
+        hondaSedanBuilder.buildEngine(new Engine(2.0, 12));
+        hondaSedanBuilder.buildSeats(4);
+        hondaSedanBuilder.buildTransmission(Transmission.AUTOMATIC);
+        hondaSedanBuilder.buildTripComputer(new TripComputer());
+        hondaSedanBuilder.setPricingStrategy(new StandardPricingStrategy());
+        
+        hondaSedanBuilder.setPricingStrategy(new DiscontedPricingStrategy());
 
+        double carPrice = hondaSedanBuilder.calculatePrice();
+        
+        Car myCar = hondaSedanBuilder.getResult();
+        
+        System.out.println("The price of car is : $"+ carPrice);
+
+        
+    }
 }
