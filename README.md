@@ -1,30 +1,102 @@
 
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | Dhruv Prajapati       |
+| Date         | 05/02/2024                 |
+| Course       | Spring      |
+| Final Project |                            |
 
-# Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+# Project Overview
+The goal of this project is to develop a web or desktop application that allows users to configure and customize a car according to their preferences. Users should be able to select various attributes of the car such as model, color, engine type, interior features, and accessories.
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/Dhruv-praju/CS-665-Final-Project-Car-Customization-Tool
 
 # Implementation Description 
 
+Following patterns were Implemented in the project:
 
-For each assignment, please answer the following:
+**1. Abstract Factory Pattern:**
+-   Flexibility:
 
-- Explain the level of flexibility in your implementation, including how new object types can
-be easily added or removed in the future.
-- Discuss the simplicity and understandability of your implementation, ensuring that it is
-easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
-- If applicable, mention any design patterns you have used and explain why they were
-chosen.
+    The Abstract Factory pattern provides a high level of flexibility by encapsulating the creation of families of related objects (e.g., Honda cars, Toyota cars) without specifying their concrete classes.
+    New object types (car brands or models) can be added by implementing new concrete factories (e.g., FordFactory) that adhere to the abstract factory interface. This allows for easy extension without modifying existing client code.
 
+-   Simplicity and Understandability:
+
+    The use of abstract factories simplifies the process of creating related objects and promotes a consistent interface for clients to interact with.
+    The abstract factory pattern enhances readability and maintainability by organizing object creation logic into cohesive units (factories) based on related families of products (cars).
+
+-   Avoidance of Duplicated Code:
+
+    Abstract factories help avoid duplicated code by centralizing the creation logic for related objects within factory classes.
+    This pattern ensures that clients interact with factory interfaces rather than directly instantiating concrete product classes, thereby reducing code duplication and promoting scalability.
+
+-   Choice of Pattern:
+
+    The Abstract Factory pattern was chosen to support the creation of families of related objects (e.g., cars from different brands) while decoupling clients from specific implementations.
+    This pattern enables seamless integration of new car brands or models into the system by extending the abstract factory interface with new concrete implementations.
+
+**2. Builder Pattern:**
+-   Flexibility:
+
+    The Builder pattern facilitates the construction of complex objects (cars) step by step, allowing different configurations to be composed dynamically.
+    New object types (car variants like sedan, SUV) can be added by implementing new builders that encapsulate the construction process, enabling flexible and customizable object creation.
+
+-   Simplicity and Understandability:
+
+    Builders simplify the creation of complex objects by separating the construction process from the representation, making it easy to understand and modify configurations.
+    The use of builders promotes readability and maintainability by exposing a fluent interface for clients to specify object configurations without directly dealing with complex construction logic.
+
+-   Avoidance of Duplicated Code:
+
+    The Builder pattern eliminates the need for telescoping constructors or multiple constructor overloads by allowing the stepwise construction of objects using a single builder interface.
+    This pattern prevents duplicated code by promoting reusable building steps across different object configurations.
+
+-   Choice of Pattern:
+
+    The Builder pattern was chosen to handle the creation of configurable and complex car objects (e.g., specifying car model, color, engine) while providing flexibility and ease of use for clients.
+
+**3. Strategy Pattern:**
+-   Flexibility:
+
+    The Strategy pattern enables interchangeable behaviors (pricing strategies) to be encapsulated as objects, allowing dynamic selection and modification at runtime.
+    New pricing strategies can be added by implementing new strategy classes that adhere to a common interface, promoting flexibility in selecting and applying different pricing algorithms.
+
+-   Simplicity and Understandability:
+
+    Strategies isolate specific algorithms (pricing logic) into separate classes, making them easy to understand and modify without affecting other parts of the system.
+    This pattern enhances readability by decoupling pricing logic from client code and promoting a clear separation of concerns.
+
+-   Avoidance of Duplicated Code:
+
+    The Strategy pattern avoids duplicated code by encapsulating variations of an algorithm (pricing calculation) into separate strategy classes, promoting code reuse and maintainability.
+    By applying the Strategy pattern, different pricing strategies can be implemented independently without duplicating the core pricing logic.
+
+-   Choice of Pattern:
+
+    The Strategy pattern was chosen to manage various pricing algorithms (e.g., base price, additional features cost) in a flexible and extensible manner, allowing easy integration of new pricing strategies into the car customization tool.
+
+**4. Decorator Pattern:**
+-   Flexibility:
+
+    The Decorator pattern enhances flexibility by allowing behavior (e.g., additional features, behaviors) to be added dynamically to individual car configurations without affecting their structure.
+    New decorators can be easily added by implementing new decorator classes, providing a flexible way to extend and modify car configurations at runtime.
+
+-   Simplicity and Understandability:
+
+    Decorators wrap objects (e.g., cars) with additional functionality in a transparent manner, making it easy to add or remove features without altering the core object's interface.
+    This pattern enhances readability by promoting a clear separation between core functionality and optional enhancements (decorators).
+
+-   Avoidance of Duplicated Code:
+
+    The Decorator pattern avoids duplicated code by allowing behaviors to be composed dynamically at runtime through a combination of decorators.
+    By applying decorators, specific enhancements can be added to different car configurations without duplicating the underlying car implementation.
+
+-   Choice of Pattern:
+
+    The Decorator pattern was chosen to provide a flexible and modular approach to adding features or behaviors (e.g., safety features, autonomous driving) to car configurations without subclassing or modifying existing car classes.
+    This pattern enables a highly configurable and extensible system where decorators can be applied independently or in combination to customize car functionalities.
 
 # Maven Commands
 
