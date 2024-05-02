@@ -1,9 +1,12 @@
 package edu.bu.met.cs665.project.factories;
 
-import edu.bu.met.cs665.project.builders.SedanBuilder;
+import edu.bu.met.cs665.project.builders.*;
+import edu.bu.met.cs665.project.builders.honda.HondaHatchbackBuilder;
+import edu.bu.met.cs665.project.builders.honda.HondaSUVBuilder;
+import edu.bu.met.cs665.project.builders.honda.HondaSedanBuilder;
 
 public interface CarFactory {
-    // public void createHatchbackBuilder();
-    public SedanBuilder createSedanBuilder();
-    // public void createSUVBuilder();
+    public CarBuilder createHatchbackBuilder();
+    public CarBuilder createSedanBuilder();
+    public CarBuilder createSUVBuilder();
 }

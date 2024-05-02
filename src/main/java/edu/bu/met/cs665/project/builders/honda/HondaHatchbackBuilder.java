@@ -1,22 +1,25 @@
-package edu.bu.met.cs665.project.builders;
+package edu.bu.met.cs665.project.builders.honda;
 
-import edu.bu.met.cs665.project.car.*;
+import edu.bu.met.cs665.project.builders.CarBuilder;
+import edu.bu.met.cs665.project.car.Car;
 import edu.bu.met.cs665.project.components.*;
 import edu.bu.met.cs665.project.pricingStrategy.PricingStrategy;
 
-
-
-public class SedanBuilder implements CarBuilder{
+public class HondaHatchbackBuilder implements CarBuilder{
     private Car car = new Car();
     private PricingStrategy pricingStrategy;
 
+    public HondaHatchbackBuilder(){
+        car.setCompany("Honda");
+        car.setCarType("Hatchback");
+    }
+
+    public void reset(){
+        this.car = new Car();
+    }
     public void buildModel(String model){
         car.setModel(model);
     }
-    public void buildCarType(String carType) {
-        car.setCarType(carType);
-    }
-
     public void buildSeats(int seats) {
         car.setSeats(seats);
     }
@@ -42,10 +45,10 @@ public class SedanBuilder implements CarBuilder{
 
     @Override
     public double calculatePrice() {
-        return pricingStrategy.calcualtePrice(car);
+        return pricingStrategy.calculatePrice(car);
     }
     public Car getResult(){
         return car;
     }
-
+    
 }

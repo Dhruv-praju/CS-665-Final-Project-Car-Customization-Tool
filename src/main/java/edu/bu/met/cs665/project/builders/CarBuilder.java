@@ -1,13 +1,14 @@
 package edu.bu.met.cs665.project.builders;
 
-import edu.bu.met.cs665.project.components.Engine;
-import edu.bu.met.cs665.project.components.GPSNavigator;
-import edu.bu.met.cs665.project.components.Transmission;
-import edu.bu.met.cs665.project.components.TripComputer;
+import edu.bu.met.cs665.project.car.Car;
+import edu.bu.met.cs665.project.components.*;
+import edu.bu.met.cs665.project.pricingStrategy.PricingStrategy;
+
 
 public interface CarBuilder {
+    
+    public void reset();
     public void buildModel(String model);
-    public void buildCarType(String carType);
     public void buildSeats(int seats);
     public void buildColor(String color);
     public void buildEngine(Engine engine);
@@ -15,4 +16,6 @@ public interface CarBuilder {
     public void buildTripComputer(TripComputer tripComputer);
     public void buildGpsNavigator(GPSNavigator gpsNavigator);
     public double calculatePrice();
+    public Car getResult();
+    public void setPricingStrategy(PricingStrategy pricingStrategy);
 }
