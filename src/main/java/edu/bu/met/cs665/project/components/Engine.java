@@ -1,6 +1,6 @@
 package edu.bu.met.cs665.project.components;
 
-public class Engine {
+public class Engine implements Component{
     private final double volume;
     private double mileage;
     private int horsepower;

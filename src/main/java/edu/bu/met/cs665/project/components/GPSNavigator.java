@@ -1,6 +1,6 @@
 package edu.bu.met.cs665.project.components;
 
-public class GPSNavigator {
+public class GPSNavigator implements Component{
     private String route;
 
     public GPSNavigator(){

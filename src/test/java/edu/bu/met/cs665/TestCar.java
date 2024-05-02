@@ -5,8 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import edu.bu.met.cs665.project.builders.*;
-import edu.bu.met.cs665.project.builders.honda.HondaHatchbackBuilder;
-import edu.bu.met.cs665.project.builders.honda.HondaSedanBuilder;
+import edu.bu.met.cs665.project.builders.honda.*;
 import edu.bu.met.cs665.project.components.*;
 import edu.bu.met.cs665.project.decorators.AutonomousDrivingDecorator;
 import edu.bu.met.cs665.project.decorators.SafetyFeatureDecorator;
