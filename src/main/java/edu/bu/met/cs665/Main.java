@@ -5,7 +5,7 @@ import edu.bu.met.cs665.project.builders.honda.HondaSedanBuilder;
 import edu.bu.met.cs665.project.components.*;
 import edu.bu.met.cs665.project.decorators.AutonomousDrivingDecorator;
 import edu.bu.met.cs665.project.factories.*;
-import edu.bu.met.cs665.project.pricingStrategy.DiscontedPricingStrategy;
+import edu.bu.met.cs665.project.pricingStrategy.DiscountedPricingStrategy;
 import edu.bu.met.cs665.project.pricingStrategy.StandardPricingStrategy;
 import edu.bu.met.cs665.project.car.*;
 
@@ -28,7 +28,7 @@ public class Main {
         hondaSedanBuilder.buildTripComputer(new TripComputer());
         hondaSedanBuilder.setPricingStrategy(new StandardPricingStrategy());
         
-        hondaSedanBuilder.setPricingStrategy(new DiscontedPricingStrategy());
+        hondaSedanBuilder.setPricingStrategy(new DiscountedPricingStrategy());
 
         
         Car myCar = hondaSedanBuilder.getResult();
