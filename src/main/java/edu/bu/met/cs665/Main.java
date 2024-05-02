@@ -30,9 +30,9 @@ public class Main {
         
         hondaSedanBuilder.setPricingStrategy(new DiscontedPricingStrategy());
 
-        double carPrice = hondaSedanBuilder.calculatePrice();
         
         Car myCar = hondaSedanBuilder.getResult();
+        double carPrice = myCar.calculatePrice();
         
         System.out.println("The price of car is : $"+ carPrice);
         

@@ -7,7 +7,7 @@ public abstract class CarDecorator extends Car{
     public CarDecorator(Car car){
         this.car = car;
     }
-
+    public abstract double calculatePrice();
     @Override
     public String toString() {    
         return car.toString();

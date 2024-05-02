@@ -1,6 +1,7 @@
 package edu.bu.met.cs665.project.car;
 
 import edu.bu.met.cs665.project.components.*;
+import edu.bu.met.cs665.project.pricingStrategy.PricingStrategy;
 
 public class Car {
     protected String carType;
@@ -13,6 +14,8 @@ public class Car {
     protected TripComputer tripComputer;
     protected GPSNavigator gpsNavigator;
     protected double fuel =0;
+    private PricingStrategy pricingStrategy;
+    private double basePrice = 25000.0;
 
     public double getFuel() {
         return fuel;
@@ -25,6 +28,9 @@ public class Car {
     }
     public String getModel() {
         return model;
+    }
+    public double getBasePrice() {
+        return basePrice;
     }
     public String getCarType() {
         return carType;
@@ -74,9 +80,16 @@ public class Car {
     public void setModel(String model) {
         this.model = model;
     }
+    public void setPricingStrategy(PricingStrategy pricingStrategy) {
+        this.pricingStrategy = pricingStrategy;
+    }
     @Override
     public String toString() {
         return this.company+" "+this.model+ "\n" + "type: "+this.carType + "\n"+ "seats: "+this.seats + "\n"+ "color: "+this.color+"\n"+ "engine: "+this.engine+"\n"+"transmission: "+this.transmission+"\n" ;
+    }
+
+    public double calculatePrice() {
+        return pricingStrategy.calculatePrice(this);
     }
 
     public void start(){

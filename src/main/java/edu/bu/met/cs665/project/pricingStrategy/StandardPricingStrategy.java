@@ -6,9 +6,9 @@ import edu.bu.met.cs665.project.components.Transmission;
 public class StandardPricingStrategy implements PricingStrategy{
     @Override
     public double calculatePrice(Car car) {
-        double basePrice = 25000.0; 
+         
         double additionalCost = calculateAdditionalCost(car);
-        return basePrice + additionalCost;
+        return car.getBasePrice() + additionalCost;
     }
 
     private double calculateAdditionalCost(Car car) {

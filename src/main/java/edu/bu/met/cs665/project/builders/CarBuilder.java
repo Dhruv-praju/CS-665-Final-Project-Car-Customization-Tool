@@ -15,7 +15,6 @@ public interface CarBuilder {
     public void buildTransmission(Transmission transmission);
     public void buildTripComputer(TripComputer tripComputer);
     public void buildGpsNavigator(GPSNavigator gpsNavigator);
-    public double calculatePrice();
     public Car getResult();
     public void setPricingStrategy(PricingStrategy pricingStrategy);
 }

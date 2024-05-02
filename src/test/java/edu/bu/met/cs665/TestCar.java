@@ -105,6 +105,17 @@ public class TestCar {
     }
     @Test
     public void testCarPricing(){
+        CarFactory toyotaCarFactory = new ToyotaFactory();
+        CarBuilder toyotaSUVBuilder = toyotaCarFactory.createSUVBuilder();
+
+        Director director = new Director();
+        director.constructToyotaSUV(toyotaSUVBuilder);
+
+        toyotaSUVBuilder.setPricingStrategy(new StandardPricingStrategy());
+        Car mySUV = toyotaSUVBuilder.getResult();
+        mySUV = new SafetyFeatureDecorator(new AutonomousDrivingDecorator(mySUV));
         
+
+        System.out.println("CAR PRICE IS: $"+mySUV.calculatePrice());
     }
 }

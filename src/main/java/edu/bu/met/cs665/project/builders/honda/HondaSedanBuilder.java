@@ -7,7 +7,7 @@ import edu.bu.met.cs665.project.pricingStrategy.PricingStrategy;
 
 public class HondaSedanBuilder implements CarBuilder{
     private Car car = new Car();
-    private PricingStrategy pricingStrategy;
+
 
     public HondaSedanBuilder(){
         car.setCompany("Honda");
@@ -40,12 +40,7 @@ public class HondaSedanBuilder implements CarBuilder{
         car.setGpsNavigator(gpsNavigator);
     }
     public void setPricingStrategy(PricingStrategy pricingStrategy) {
-        this.pricingStrategy = pricingStrategy;
-    }
-
-    @Override
-    public double calculatePrice() {
-        return pricingStrategy.calculatePrice(car);
+        car.setPricingStrategy(pricingStrategy);
     }
     public Car getResult(){
         return car;

@@ -3,6 +3,8 @@ package edu.bu.met.cs665.project.decorators;
 import edu.bu.met.cs665.project.car.Car;
 
 public class AutonomousDrivingDecorator extends CarDecorator{
+    private static final double AUTOMATION_PRICE = 2000.0;
+
     public AutonomousDrivingDecorator(Car car){
         super(car);
     }
@@ -19,5 +21,10 @@ public class AutonomousDrivingDecorator extends CarDecorator{
     @Override
     public String toString() {
         return super.toString()+"Autonomous Driving"+"\n" ;
+    }
+
+    @Override
+    public double calculatePrice() {
+        return car.calculatePrice()+AUTOMATION_PRICE;
     }
 }
